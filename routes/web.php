@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 Route::get('/home/','HomeController@index');
 Route::get('/home/db_test','HomeController@db_test');
+Route::get('/en/select','EnglishWriteController@select');
