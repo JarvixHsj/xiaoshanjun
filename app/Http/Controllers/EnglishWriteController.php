@@ -11,15 +11,48 @@ use Illuminate\Support\Facades\DB;
 class EnglishWriteController extends BaseController
 {
     public function index(){
-        return view('index');
+//        $title = '欢迎进入英语频道~';
+        $title = 'Welcome to English Channel~';
+        return view('EnglishWrite/index',['title' => $title]);
     }
 
     public function select(){
-        $jobs_res = DB::table('en_content')->get()->toArray();
+        $jobs_res = DB::table('en_content')->orderBy('id')->get()->toArray();
 
-//        var_dump($jobs_res);
         $data = array();
         $data['jobs_res'] = $jobs_res;
         return view('EnglishWrite/select',$data);
     }
+
+
+    public function make($assign = 0)
+    {
+        $data = array();
+        if(!empty($assign)){
+            $rand = rand(1,424);
+            $data['rand'] = $rand;
+        }
+        return view('EnglishWrite/make', $data);
+    }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -63,62 +63,16 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            table td,th{
-                /*border:1px solid red;*/
-                /*border-bottom: 1px solid  red;*/
-                /*border-right: 1px solid red;*/
-                /*padding:0;*/
-                /*margin:0;*/
-            }
-            .reportMenu{
-                position: relative;
-                /*margin-top: 15px;*/
-                /*margin:5px auto 5px;*/
-                width:100%;
-                overflow: hidden;
-                /*height:100;*/
-            }
-            .text{
-                position:fixed;top:0;
-                margin-top:0px;
-                z-index:9999999;
-                background:#FFFFFF;
-                /*border-bottom: 2px solid #e0d9d9;*/
-            }
-            .text .one{
-                width:2%;
-            }
-            .text .two{
-                width:27.75%;
-            }
-            .text .three{
-                width:36.98%;
-            }
-            .text .four{
-                width:31.9%;
-            }
-
-
         </style>
     </head>
     <body>
-    <table border="1">
-        <tr class="reportMenu">
-            <th class="one">序号</th>
-            <th class="two">语句</th>
-            <th class="three">意思</th>
-            <th class="four">关键词</th>
-        </tr>
-        @foreach ($jobs_res as $item)
-        <tr>
-            <td>{{$item['id']}}</td><td>{{ $item['chinese_meaning'] }}</td><td>{{$item['complete_en']}}</td><td>{{$item['key_words']}}</td>
-        </tr>
-        @endforeach
-        <tr>
-            <td>1</td><td>12312</td><td>12312</td><td>12312</td>
-        </tr>
-    </table>
-
+{{--    <form action="{{url('/en/make/1')}}">--}}
+    <form action="">
+        <input type="submit" value="随机出题">
+    </form>
+    @isset($rand)
+       aaa
+    @endisset
         <div class="flex-center position-ref full-height">
             {{--<div class="content">--}}
                 {{--<div class="title m-b-md">--}}
@@ -136,21 +90,6 @@
         </div>
     </body>
     <script>
-        $(function () {
-            var top = $(".reportMenu").offset().top;
-            var scrollNum = "{$scroll}";
-            if(scrollNum){
-                $(window).scrollTop(scrollNum);
-            }
-            $(window).scroll(function () {
-                if ($(window).scrollTop() >= top) {
-//                    $(".reportMenu").attr("style", "position:fixed;top:0;margin-top:0px;z-index:9999999;background:#FFFFFF;border-bottom: 2px solid #e0d9d9;");
-                    $('.reportMenu').addClass('text');
-                } else {
-                    $('.reportMenu').removeClass('text');
-//                    $(".reportMenu").attr("style", "");
-                }
-            }).trigger("scroll");
-        })
+
     </script>
 </html>
