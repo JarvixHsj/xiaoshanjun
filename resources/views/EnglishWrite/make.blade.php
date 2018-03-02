@@ -66,13 +66,9 @@
         </style>
     </head>
     <body>
-{{--    <form action="{{url('/en/make/1')}}">--}}
-    <form action="">
+    <form action="{{url('/en/random/')}}">
         <input type="submit" value="随机出题">
     </form>
-    @isset($rand)
-       aaa
-    @endisset
         <div class="flex-center position-ref full-height">
             {{--<div class="content">--}}
                 {{--<div class="title m-b-md">--}}
